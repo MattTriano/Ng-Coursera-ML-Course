@@ -12,16 +12,11 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
-data = load('ex2data1.txt');
-X = data(:, 1:2); y = data(:, 3);
-m = length(y);
 pos = find(y == 1);
 neg = find(y == 0);
 plot(X(pos, 1), X(pos, 2), 'k+', 'LineWidth', 2, 'MarkerSize', 10);
 plot(X(neg, 1), X(neg, 2), 'ko', 'LineWidth', 2, 'MarkerFaceColor', 
 	'y','MarkerSize', 10);
-ylabel('Exam 2 Score');
-xlabel('Exam 1 Score');
 
 % =========================================================================
 
