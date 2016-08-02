@@ -38,10 +38,10 @@ grad = zeros(size(theta));
 
 hx = sigmoid(X * theta);
 theta1 = [0 ; theta(2:end)];
-regTerm = (lambda / (2*m)) * (theta1 * theta) 
-J = (1/m) * sum((-y.*log(hx)) - ((1-y).*log(1-hx)) + regTerm;
+regTerm = (lambda / (2*m)) * (theta1' * theta1); 
+J = (1/m) * sum((-y.*log(hx)) - ((1-y).*log(1-hx))) + regTerm;
 
-grad = (1/m) * (X * (hx - y)) + ((lambda / m) * theta1);
+grad = (1/m) * ((X' * (hx - y)) + (lambda * theta1));
 
 
 
